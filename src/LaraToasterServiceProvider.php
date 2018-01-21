@@ -21,7 +21,7 @@ class LaraToasterServiceProvider extends ServiceProvider
 
     $this->publishes([
       __DIR__.'/../config/laratoaster.php' => config_path('laratoaster.php'),
-      __DIR__.'/../js/components/LaraToaster.vue' => base_path('resources/assets/js/components/LaraToast.vue'),
+      __DIR__.'/../js/components/LaraToaster.vue' => base_path('resources/assets/js/components/LaraToaster.vue'),
     ], 'laratoaster');
 
   }
