@@ -55,13 +55,36 @@ Publish the configuration file to override the package defaults and install the 
 
 >This command will generate a config file `config/laratoaster.php` and it will install the LaraToaster Vue component `resources/assets/js/components/LaraToaster.vue`.
 
-### Step 4. Register Vue Component
+### Step 4. Install Buefy + Bulma
 
-Register the LaraToaster Vue Component in `resources/js/app.js`.
+If you haven't already, install Buefy. Doing so will also install Bulma.
+`$ yarn add buefy`
+
+
+### Step 5. Register Vue Component
+
+Register the LaraToaster Vue Component in `resources/assets/js/app.js`.
 ```javascript
+
+// import BUEFY
+import Buefy from 'buefy'
+// Use Buefy
+Vue.use(Buefy)
+
+// Register LaraToast Vue Component
 Vue.component('laratoaster', require('./components/LaraToaster.vue'));
 
+// Make sure to have a New Vue instance setup
+const app = new Vue({
+    el: '#app'
+});
+
 ```
+
+### Step 6. Run your compiler
+Don't forget to run your compiler script to update your js files.
+`$ yarn run dev` or `$ yarn run watch`
+
 
 ### Usage
 LaraToaster can be used in your project whenever you need to notify the user of an event. Most commonly, in your CRUD controllers. LaraToaster uses the `Session::flash` method to set a Flash message.
