@@ -1,0 +1,55 @@
+{
+    "name": "theorythree/laratoaster",
+    "type": "library",
+    "description": "An easy-to-use alert helper for your Laravel projects.",
+    "keywords": [
+        "TheoryThree",
+        "LaraToaster"
+    ],
+    "homepage": "https://github.com/TheoryThree/LaraToaster",
+    "license": "MIT",
+    "support": {
+      "issues": "https://github.com/theorythree/laratoaster/issues",
+      "source": "https://github.com/theorythree/LaraToaster"
+    },
+    "authors": [
+        {
+            "name": "Dan Merfeld",
+            "email": "dan@theorythree.com",
+            "homepage": "https://www.theorythree.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : "~5.6|~7.0",
+    },
+    "require-dev": {
+        "phpunit/phpunit" : ">=5.4.3",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "TheoryThree\\LaraToaster\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TheoryThree\\LaraToaster\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+          "providers": [
+            "TheoryThree\\LaraToaster\\LaraToasterServiceProvider"
+          ],
+          "aliases": {
+            "Toaster": "TheoryThree\\LaraToaster\\LaraToasterFacade"
+          }
+        }
+    }
+}
