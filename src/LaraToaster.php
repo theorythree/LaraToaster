@@ -19,7 +19,7 @@ class LaraToaster
     $return = '';
     foreach ($this->types as $type){
       if (Session::has($type)) {
-        $return .= '<laratoaster message="'.Session::get($type).'" type="is-'.$type.'"></laratoaster>';
+        $return .= '<laratoaster name="laratoaster[]" message="'.Session::get($type).'" type="is-'.$type.'"></laratoaster>';
       }
     }
 
@@ -29,7 +29,7 @@ class LaraToaster
   }
 
   public function make($type,$message){
-    return '<laratoaster message="'.$message.'" type="is-'.$type.'"></laratoaster>';
+    return '<laratoaster name="laratoaster[]" message="'.$message.'" type="is-'.$type.'"></laratoaster>';
   }
 
   public function success($message){
