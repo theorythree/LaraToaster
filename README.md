@@ -24,7 +24,7 @@ $ composer require theorythree/laratoaster
 
 This package takes advantage of the new _auto-discovery_ feature found in Laravel 5.5+. If you're using that version of Laravel, then you may skip this step and move on to Step 3.
 
-Add NavPrompt Service Provider to `config/app.php`.
+Add LaraToaster Service Provider to `config/app.php`.
 ``` php
 'providers' => [
 
