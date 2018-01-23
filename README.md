@@ -1,4 +1,4 @@
-# NavPrompt
+# LaraToaster
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -161,18 +161,18 @@ Want to get in touch to discuss this package, or another one you'd like us to bu
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/theorythree/LaraToast.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/theorythree/LaraToaster.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/theorythree/LaraToast/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/theorythree/LaraToast.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/theorythree/LaraToast.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/theorythree/LaraToast.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/theorythree/LaraToaster.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/theorythree/LaraToaster.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/theorythree/LaraToaster.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/theorythree/LaraToast
-[link-travis]: https://travis-ci.org/theorythree/LaraToast
-[link-scrutinizer]: https://scrutinizer-ci.com/g/theorythree/LaraToast/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/theorythree/LaraToast
-[link-downloads]: https://packagist.org/packages/theorythree/LaraToast
+[link-packagist]: https://packagist.org/packages/theorythree/LaraToaster
+[link-travis]: https://travis-ci.org/theorythree/LaraToaster
+[link-scrutinizer]: https://scrutinizer-ci.com/g/theorythree/LaraToaster/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/theorythree/LaraToaster
+[link-downloads]: https://packagist.org/packages/theorythree/LaraToaster
 [link-author]: https://github.com/dmerfeld
 [link-contributors]: ../../contributors
 [link-mailme]: mailto:dan@theorythree.com
