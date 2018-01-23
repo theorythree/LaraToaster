@@ -92,6 +92,7 @@ LaraToaster can be used in your project whenever you need to notify the user of 
 1. Install package
 2. Include `Vue.component('laratoaster', require('./components/LaraToaster.vue'));` in `resources/assets/js/app.js`
 3. Include `{!! Toaster::toast() !!}` in your Blade template
+4. Set the Toaster message in your controller (see example below)
 
 ---
 
@@ -105,7 +106,7 @@ LaraToaster can be used in your project whenever you need to notify the user of 
 _Important_
 >The method returns a Vue component named `<laratoastert>`, so you must make sure that you use `{!! !!}` instead of `{{ }}` to bracket the method in your Blade template or the returned string will be escaped.
 
-> Also, you must put the
+> Also, you must put the tag within an instantiated Vue element. In the examples we're using a div with an id of #app.
 
 #### Parameters
 
@@ -115,7 +116,7 @@ String: The type of message to be displayed. Accepts any class name supported by
 ###### $message
 String: The alert message to be displayed.
 
-#### Example
+#### Example 1: Instant Toast
 
 ``` js
 // resources/js/app.js
@@ -137,7 +138,128 @@ const app = new Vue({
 </div>  
 
 ```
-MORE METHODS HERE
+
+---
+
+### toast()
+
+`String toast()`
+
+#### Description
+> LaraToaster can also be used to rely on Session and this is more likely the setup you'll want to have in your projects. There are two parts to the setup. (1) the `toast()` method call in your Blade templates (which serves as a placeholder for where the `<laratoaster>` element will be injected into your template) and (2) the use of one of the many method calls in your controllers.
+
+> Below, we're using the `success()` method because we're optimists.
+
+_Important_
+>The method returns a Vue component named `<laratoastert>`, so you must make sure that you use `{!! !!}` instead of `{{ }}` to bracket the method in your Blade template or the returned string will be escaped.
+
+> Also, you must put the tag within an instantiated Vue element. In the examples we're using a div with an id of #app.
+
+#### Example 2 - Standard Toaster Setup
+
+``` js
+// resources/js/app.js
+// make sure the Vue component is registered
+Vue.component('laratoaster', require('./components/LaraToaster.vue'));
+
+// make sure the Vue is set to the HTML element contained in your Blade template
+// In this example, we're assuming a div with an id of #app.
+const app = new Vue({
+    el: '#app'
+});
+
+```
+
+``` html
+<!-- in your Blade Template -->
+<div id="app">
+  {!! Toaster::toast() !!}
+</div>  
+
+```
+
+```php
+<?php
+
+// controller example
+
+namespace App\Http\Controllers;
+
+use Toaster; // (1) include Toaster
+use Session;
+use Illuminate\Http\Request;
+
+class ItemController extends Controller
+{
+
+  // ...
+
+  public function store(Request $request)
+  {
+
+    // your store() method code
+
+    // (2) Call Toaster
+    Toaster::success("Your item was saved.");
+    return redirect()->route('items.show',$item->id);
+
+  }
+
+}
+
+
+```
+---
+
+### success(), warning(), danger()
+
+`String [success, warning, danger]( String $message )`
+
+#### Description
+> These methods can be used in your controller files to set the type of alert message you wish to trigger. In all cases the a Session Flash message will be set with the message you provide.
+
+_Important_
+> Do not forget to include `{!! Toaster::toast() !!}` in your Blade template within an instantiated Vue element.
+
+#### Parameters
+
+###### $message
+String: The alert message to be displayed.
+
+#### Example 3: Setting Your Toaster Messages
+
+``` html
+<!-- in your Blade Template -->
+<div id="app">
+  {!! Toaster::toast() !!}
+</div>  
+
+```
+
+```php
+<?php
+
+/*
+ Somewhere in your code probably a
+ store(), update(), or destroy() method.
+*/
+
+Toaster::success("Success feels good!");
+Toaster::warning("I got bad feeling about this.");
+Toaster::danger("I imagined that working out differently.");
+
+/*
+ You can also use any of the other named functions
+ that correspond with the Bulma status class names.
+*/
+
+Toaster::white("I don't see the world in black and white.");
+Toaster::black("Who turned out the lights?");
+Toaster::light("I probably should be used on a dark background.");
+Toaster::dark("I probably should be used on a light background.");
+Toaster::info("I'm cool either way.");
+
+```
 
 ---
 
