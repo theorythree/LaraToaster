@@ -5,7 +5,7 @@
   export default {
     props: ['message','type'],
     mounted() {
-      this.$toast.open({
+      this.$buefy.toast.open({
         message: this.message,
         type: this.type,
         duration: 2000,
