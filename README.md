@@ -72,7 +72,7 @@ import Buefy from 'buefy'
 Vue.use(Buefy)
 
 // Register LaraToast Vue Component
-Vue.component('laratoaster', require('./components/LaraToaster.vue'));
+Vue.component('laratoaster', require('./components/LaraToaster.vue').default);
 
 // Make sure to have a New Vue instance setup
 const app = new Vue({
